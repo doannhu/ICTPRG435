@@ -5,17 +5,20 @@ const ctx = canvas.getContext("2d");
 const passConf = document.getElementById("pwdConf");
 const pass = document.getElementById("pwd");
 const submitBtn = document.getElementById("submitbtn");
-submitBtn.addEventListener("click", () =>{
+submitBtn.addEventListener("click",passwordMatch());
+function passwordMatch() {
     if (pass.value != passConf.value) {
-        alert("Password and confirmed password aren't matched !");
-    }
-});
+        alert("Password and confirmed password aren't matched !");        
+    };
+    console.log(pass.value);
+    console.log(passConf.value);
+};
 
 // Check mouse position and display in canvas. For test only!
-canvas.addEventListener("mousemove", (event) => {
-    console.log("Mouse X: " + event.clientX)
-    console.log("Mouse Y: " + event.clientY)
-});
+// canvas.addEventListener("mousemove", (event) => {
+//     console.log("Mouse X: " + event.clientX)
+//     console.log("Mouse Y: " + event.clientY)
+// });
 
 // Select line width
 const lineWid = document.getElementById("line_width");
