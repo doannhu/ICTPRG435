@@ -8,6 +8,9 @@
     <title>Abtract Art App</title>
 </head>
 <body>
+    <title>Abstract Art Competition</title>
+    <h2>Introduction</h2>
+    <p></p>
     <canvas id="canvas"></canvas>
     <!-- selecting language -->
     <button type="button" id="en_btn">English</button>
@@ -21,7 +24,7 @@
     <form id="userReg" accept-charset="utf-8" action="https://formspree.io/xzbjawgz/FORM_ID" method="post" enctype="multipart/form-data">
         <h3> Registration form </h3><br>
         <input type="text" name="username" placeholder="enter your username here" required>
-        <input type="email" name="email" placeholder="enter your email here" required>
+        <input id="email" type="email" name="email" placeholder="enter your email here" required>
         <input id="pwd" type="password" name="password" placeholder="enter your password here" required>
         <input id="pwdConf" type="password" name="passwordConf" placeholder="re-enter your password here" required>
         <input type="number" placeholder="enter your phone number here">
@@ -45,7 +48,7 @@
     <!-- selecting line width -->
     <div>
         <label>line width </label><input type="range" id="line_width"
-        min="0" max="20">
+        min="1" max="5">
     </div>
 
     <!-- drawing rectangular -->
@@ -65,7 +68,7 @@
         <input type="number" id="sq_x" placeholder="position x">
         <input type="number" id="sq_y" placeholder="position y">
         <label>side </label><input type="range" id="sq_side"
-        min="0" max="400">
+        min="0" max="100">
         <button type="button" id="sq_btn">draw</button>
     </div>
 
@@ -75,7 +78,7 @@
         <input type="number" id="cir_cen_x" placeholder="center position x">
         <input type="number" id="cir_cen_y" placeholder="center position y">
         <label>radius </label><input type="range" id="cir_rad"
-        min="0" max="400">
+        min="0" max="50">
         <button type="button" id="cir_btn">draw</button>
     </div>
 
