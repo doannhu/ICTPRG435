@@ -8,10 +8,16 @@
     <title>Abtract Art App</title>
 </head>
 <body>
-    <title>Abstract Art Competition</title>
+    <h1>Abstract Art Competition</h1>
     <h2>Introduction</h2>
-    <p></p>
-    <canvas id="canvas"></canvas>
+    <p>
+        <ul>
+            <li>1. Select color</li>
+            <li>2. Select line width</li>
+            <li>3. Select shape to draw</li>
+        </ul>
+    </p>
+    <canvas id="canvas" width="400" height="400"></canvas>
     <!-- selecting language -->
     <button type="button" id="en_btn">English</button>
     <button type="button" id="spanish_btn">Spanish</button>
@@ -41,7 +47,7 @@
         <div class="clr" id="clr_w"></div>
         <div class="clr" id="clr_se"></div>
         <div class="clr" id="clr_su"></div>
-        <button class="clear">clear</button>
+        <button class="clear" id="clr_btn">clear</button>
         <button class="save">save</button>
     </div>
 
@@ -78,7 +84,7 @@
         <input type="number" id="cir_cen_x" placeholder="center position x">
         <input type="number" id="cir_cen_y" placeholder="center position y">
         <label>radius </label><input type="range" id="cir_rad"
-        min="0" max="50">
+        min="0" max="200">
         <button type="button" id="cir_btn">draw</button>
     </div>
 
