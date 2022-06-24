@@ -22,13 +22,6 @@ function validatePassword(){
 //     if 
 // }
 
-
-// Check mouse position and display in canvas. For test only!
-// canvas.addEventListener("mousemove", (event) => {
-//     console.log("Mouse X: " + event.clientX)
-//     console.log("Mouse Y: " + event.clientY)
-// });
-
 // Select line width
 ctx.lineWidth = document.getElementById("line_width").value; 
 
@@ -49,6 +42,7 @@ function drawRectangular(){
     const recHeight = document.querySelector('#rec_height');
     const recShadow = document.querySelector('#rec_shadow');
     if(recShadow) {
+        ctx.beginPath();
         ctx.shadowColor = 'red';
         ctx.shadowOffsetX = 10;
         ctx.shadowOffsetY = 10;
@@ -58,6 +52,7 @@ function drawRectangular(){
         ctx.strokeStyle = clr;
         ctx.strokeRect(recX.value, recY.value, recWidth.value, recHeight.value);
     } else {
+        ctx.beginPath();
         ctx.fillStyle = clr;
         ctx.fillRect(recX.value, recY.value, recWidth.value, recHeight.value);
         ctx.strokeStyle = clr;
@@ -72,6 +67,7 @@ function drawSquare(){
     const sqX = document.querySelector('#sq_x');
     const sqY = document.querySelector('#sq_y');
     const sqSide = document.querySelector('#sq_side');
+    ctx.beginPath();
     ctx.fillStyle = clr;
     ctx.fillRect(sqX.value, sqY.value, sqSide.value, sqSide.value);
     ctx.strokeStyle = clr;
@@ -133,3 +129,11 @@ const enBtn = document.querySelector('#en_btn');
 spanBtn.addEventListener("click",()=>{
 
 });
+
+//Clear button
+//Check mouse position and display in canvas. For test only!
+canvas.addEventListener("mousemove", (event) => {
+    console.log("Mouse X: " + event.clientX)
+    console.log("Mouse Y: " + event.clientY)
+});
+document.querySelector('#clr_btn').addEventListener("click", ()=>{ctx.clearRect(309, 227, 400, 400)});
