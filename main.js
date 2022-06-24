@@ -4,15 +4,18 @@ const ctx = canvas.getContext("2d");
 // Registration - password confirmation
 const passConf = document.getElementById("pwdConf");
 const pass = document.getElementById("pwd");
-const submitBtn = document.getElementById("submitbtn");
-submitBtn.addEventListener("click",passwordMatch());
-function passwordMatch() {
-    if (pass.value != passConf.value) {
-        alert("Password and confirmed password aren't matched !");        
-    };
-    console.log(pass.value);
-    console.log(passConf.value);
-};
+passConf.addEventListener("change", validatePassword);
+function validatePassword(){
+    if(pass.value != passConf.value){
+        passConf.setCustomValidity("password don't match");
+        passConf.reportValidity();
+        pass.value ='';
+        passConf.value='';
+    } else {
+        passConf.setCustomValidity('');
+        passConf.reportValidity();        
+    }
+}
 
 // Check mouse position and display in canvas. For test only!
 // canvas.addEventListener("mousemove", (event) => {
@@ -114,4 +117,12 @@ lineBtn.addEventListener("click", () => {
             x.stroke();
             break;}
     
+});
+
+// Select language
+const spanBtn = document.querySelector('#spanish_btn');
+const enBtn = document.querySelector('#en_btn');
+
+spanBtn.addEventListener("click",()=>{
+
 });
