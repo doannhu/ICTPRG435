@@ -1,69 +1,52 @@
-assign element canvas to canvas constant
-assign canvas get context method to ctx constant
+get canvas context method
 
-// --------registration matching password and confirmed password---------
-make password matching function to compare password and confirm password
-get the element user password
-get the element confirmed password
-add the event listener when submit button is clicked and run password matching function
-
-//---------handle the color selection------------------------------------
-assign a default color value to clr varible
-assign the 1st colour element to clrP constant
-assign the 2nd colour element to clrD constant
-assign the 3rd colour element to clrW constant 
-assign the 4th colour element to clrSe constant 
-assign the 5th colour element to clrSu constant
-add event listener when user clicks on the 1st color and assign 1st color to clr varible
-add event listener when user clicks on the 1st color and assign 2nd color to clr varible
-add event listener when user clicks on the 1st color and assign 3rd color to clr varible
-add event listener when user clicks on the 1st color and assign 4th color to clr varible
-add event listener when user clicks on the 1st color and assign 5th color to clr varible
-
-//---------handle the line width selection---------------------------------
-assign the line width element to lineWid constant
-assign lineWidth property of ctx to lineWid value
-
-//---------draw rectangular------------------------------------------------
-assign element rectangular postion x to recX constant
-assign element rectangular postion y to recY constant
-assign element rectangular width to recWidth constant
-assign element rectangular height to recHeight constant
-assign element rectangular shadow to recShadow constant
-add event listener when user clicks on the drawing rectangular button
-	if the recShadow is true then
-		set offset and color shadow properties of ctx
-		set fill property of ctx and run fill method
-		set stroke property of ctx and run stroke method
+// --------matching password and confirm password-------------------------
+event listener - complete confirm password, call validatePassword()
+function validatePasword:
+	get password and confirm password
+	if confirm password is different
+		display message
 	else
-		set fill property of ctx and run fill method
-		set stroke property of ctx and run stroke method
+		do nothing 
 
-//---------draw square----------------------------------------------------
-assign element square position x to sqX constant
-assign element square position y to sqY constant
-assign element square side to sqSide constant
-add event listener when user clicks on the drawing square button
-	assign clr varible to fill property of ctx
-	run fill method
-	assign clr varible to stroke property of ctx
-	run stroke method
+//---------color selection and line width----------------------------------
 
-//---------draw circle-----------------------------------------------------
-assign element circle center postion x to cirX constant
-assign element circle center position y to cirY constant
-assign element circle radius to cirRad constant
-add event listener when user clicks on the drawing circle button
-	run the stroke method
-	assign clr varible to fill property of ctx
-	run the fill method
+event listener - click on 1 of 5 colors, assign color value to color varible
 
-//---------draw line--------------------------------------------------------   
-assign element line start position x to lineX constant
-assign element line start position y to lineY constant
-assign element line length to lineLen constant
-assign element line option to lineOpt constant //options: 90 degree vertical, -90 degree vertical, 0 degree horizontal, 180 degree horizontal
-add event listener when user clicks on the drawing line button
+get line width and assign its value to canvas line width context
+
+
+//---------rectangular-----------------------------------------------------
+event listener - click on the drawing rectangular button, call drawRectangular()
+function drawRectangular:
+	get rectangular start position, width, height and shadow
+	if shadow is ticked then
+		set shadow properties
+		set color
+		fill and stroke rectangular
+		
+	else
+		set color
+		fill and stroke rectangular
+
+//---------square---------------------------------------------------------
+event listener - click on the drawing square button, call drawSquare()
+function drawSquare:
+	get square side and start position
+	set color
+	fill and stroke square 
+
+//---------circle---------------------------------------------------------
+event listener - click on the drawing circle button, call drawCircle()
+function drawCircle:
+	get cirle start position and radius
+	set color
+	fill ans stroke circle
+
+//---------line------------------------------------------------------------   
+event listener - click on the drawing line button, call drawLine()
+function drawLine:
+	get start position, line length and draw options
 	switch:
 		case 0: draw 90 degree vertical line
 		case 1: draw 90 degree vertical line 		
@@ -74,10 +57,9 @@ add event listener when user clicks on the drawing line button
 add event listener when user clicks on the clear button
 	draw a square with same size with canvas and fill with white color
 
-//----------select language-------------------------------------------------
-assign element Spanish button to spanBtn const
-assign element English button to enBtn const
-add event listener when user clicks on the spanBtn button
+//----------language--------------------------------------------------------
+
+event listener - clicks on Spanish
 	change header, instroduction and all element to Spanish
-add event listener when user clicks on the enBtn button
+event listener - clicks on English
 	change header, instroduction and all element to Englsih
