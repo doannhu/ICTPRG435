@@ -16,11 +16,6 @@ function validatePassword(){
         passConf.reportValidity();        
     }
 }
-// const email = document.getElementById("email");
-// email.addEventListener("change",validateEmail);
-// function validateEmail(){
-//     if 
-// }
 
 // Select line width
 ctx.lineWidth = document.getElementById("line_width").value; 
@@ -127,29 +122,62 @@ const vieBtn = document.querySelector('#vn_btn');
 const enBtn = document.querySelector('#en_btn');
 
 vieBtn.addEventListener("click",()=>{
+    //heading and introduction
     document.getElementById('heading1').innerHTML='<h1>Cuộc thi sáng tạo nghệ thuật</h1>';
     document.getElementById('intro').innerHTML='<h1>Giới thiệu</h1>';
-    document.getElementById('guide1').innerText='1. Lựa chọn màu sắc';
-    document.getElementById('guide2').innerText='2. Lựa chọn độ đậm nét';
-    document.getElementById('guide3').innerText='1. Lựa chọn hình dạng';
-    //
+    document.getElementById('guide1').innerText='Lựa chọn màu sắc';
+    document.getElementById('guide2').innerText='Lựa chọn độ đậm nét';
+    document.getElementById('guide3').innerText='Lựa chọn hình dạng';
+    //form
     document.getElementById('reg_form').innerText='Form Đăng kí';
-    document.getElementsByName('username').innerHTML='<input type="text" name="username" placeholder="nhập tên người dùng tại đây" required>nhập tên người dùng tại đây</input>';
-    document.getElementById('email').innerHTML = '<input id="email" type="email" name="email" placeholder="nhập email tại đây" required>';
-    document.getElementById('pwd').innerHTML= '<input id="pwd" type="password" name="password" placeholder="nhập mật khẩu tại đây" required>';
-    document.getElementById('pwdConf').innerHTML= '<input id="pwdConf" type="password" name="passwordConf" placeholder="xác nhận mật khẩu tại đây" required>'
-    document.getElementById('phone').innerHTML= '<input type="number" placeholder="nhập số đt vào đây">';
-    document.getElementById('email-subject').innerHTML= '<input type="hidden" name="_subject" id="email-subject" value="File Upload Form">';
-    document.getElementById('label_file').innerHTML= '<label id="label_file" for="upload">File của bạn:</label>'
-    document.getElementById('fileUpload').innerHTML= '<input id="fileUpload" type="file" name="upload">';
-    document.getElementById('submitbtn').innerHTML= '<button id="submitbtn" type="submit">nộp</button>';
+    document.getElementById('urs-label').innerText='tên đăng nhập: ';
+    document.getElementById('email-label').innerText = 'thư điện tử: ';
+    document.getElementById('pwd-label').innerText= 'mật khẩu: ';
+    document.getElementById('pwdConf-label').innerText= 'xác nhận mật khẩu: ';
+    document.getElementById('phone-label').innerText= 'số điện thoại: ';
+    document.getElementById('label_file').innerText= 'File của bạn: ';
+    document.getElementById('submitbtn').innerText= 'nộp';
+    //line width
+    document.getElementById('lineWidth-label').innerText='Độ dày nét';
+    //drawing rectangular
+    document.getElementById('rec').innerText='Hình chữ nhật ';
+    document.getElementById('rec_posx').innerText='vị trí x: ';
+    document.getElementById('rec_posy').innerText='vị trí y: ';
+    document.getElementById('rec_wid').innerText='độ dài: ';
+    document.getElementById('rec_hei').innerText='độ cao: ';
+    document.getElementById('rec_sha').innerText='tạo bóng: ';
+    document.getElementById('rec_btn').innerText='vẽ';
+    //drawing square
+    document.getElementById('sq').innerText='Hình vuông ';
+    document.getElementById('sq_posx').innerText='vị trí x: ';
+    document.getElementById('sq_posy').innerText='vị trí y: ';
+    document.getElementById('sq_si').innerText='chiều dài: ';
+    document.getElementById('sq_btn').innerText='vẽ';
+    //drawing circle
+    document.getElementById('cir').innerText='Hình tròn ';
+    document.getElementById('cir_posx').innerText='vị trí tâm x: ';
+    document.getElementById('cir_posy').innerText='vị trí tâm y: ';
+    document.getElementById('cir_radius').innerText='bán kính: ';
+    document.getElementById('cir_btn').innerText='vẽ';    
+    //drawing line
+    document.getElementById('line').innerText='Đường thẳng ';
+    document.getElementById('line_posx').innerText='vị trí x: ';
+    document.getElementById('line_posy').innerText='vị trí y: ';
+    document.getElementById('line_length').innerText='độ dài: ';
+    document.getElementById('line_option').innerText='chọn hướng';  
+    document.getElementById('line_opt0').innerText='90 độ hướng lên ';
+    document.getElementById('line_opt1').innerText='90 độ hướng xuống ';
+    document.getElementById('line_opt2').innerText='0 độ ngang ';
+    document.getElementById('line_opt3').innerText='180 độ ngang ';
+    document.getElementById('line_btn').innerText='vẽ';  
+
 });
 
 
 //Clear button
 //Check mouse position and display in canvas. For test only!
-canvas.addEventListener("mousemove", (event) => {
-    console.log("Mouse X: " + event.clientX)
-    console.log("Mouse Y: " + event.clientY)
-});
+// canvas.addEventListener("mousemove", (event) => {
+//     console.log("Mouse X: " + event.clientX)
+//     console.log("Mouse Y: " + event.clientY)
+// });
 document.querySelector('#clr_btn').addEventListener("click", ()=>{ctx.clearRect(309, 227, 400, 400)});
