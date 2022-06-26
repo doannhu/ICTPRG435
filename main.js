@@ -123,12 +123,28 @@ function drawLine(){
 
 
 // Select language
-const spanBtn = document.querySelector('#spanish_btn');
+const vieBtn = document.querySelector('#vn_btn');
 const enBtn = document.querySelector('#en_btn');
 
-spanBtn.addEventListener("click",()=>{
-
+vieBtn.addEventListener("click",()=>{
+    document.getElementById('heading1').innerHTML='<h1>Cuộc thi sáng tạo nghệ thuật</h1>';
+    document.getElementById('intro').innerHTML='<h1>Giới thiệu</h1>';
+    document.getElementById('guide1').innerText='1. Lựa chọn màu sắc';
+    document.getElementById('guide2').innerText='2. Lựa chọn độ đậm nét';
+    document.getElementById('guide3').innerText='1. Lựa chọn hình dạng';
+    //
+    document.getElementById('reg_form').innerText='Form Đăng kí';
+    document.getElementsByName('username').innerHTML='<input type="text" name="username" placeholder="nhập tên người dùng tại đây" required>nhập tên người dùng tại đây</input>';
+    document.getElementById('email').innerHTML = '<input id="email" type="email" name="email" placeholder="nhập email tại đây" required>';
+    document.getElementById('pwd').innerHTML= '<input id="pwd" type="password" name="password" placeholder="nhập mật khẩu tại đây" required>';
+    document.getElementById('pwdConf').innerHTML= '<input id="pwdConf" type="password" name="passwordConf" placeholder="xác nhận mật khẩu tại đây" required>'
+    document.getElementById('phone').innerHTML= '<input type="number" placeholder="nhập số đt vào đây">';
+    document.getElementById('email-subject').innerHTML= '<input type="hidden" name="_subject" id="email-subject" value="File Upload Form">';
+    document.getElementById('label_file').innerHTML= '<label id="label_file" for="upload">File của bạn:</label>'
+    document.getElementById('fileUpload').innerHTML= '<input id="fileUpload" type="file" name="upload">';
+    document.getElementById('submitbtn').innerHTML= '<button id="submitbtn" type="submit">nộp</button>';
 });
+
 
 //Clear button
 //Check mouse position and display in canvas. For test only!

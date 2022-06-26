@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="C:\Users\Doan Nhu\Downloads\kross-main\kross-main\theme\css\style.css"> -->
     <link rel="stylesheet" href="style.css">
     <title>Abtract Art App</title>
 </head>
 <body>
-    <h1>Abstract Art Competition</h1>
-    <h2>Introduction</h2>
+    <h1 id="heading1">Abstract Art Competition</h1>
+    <h2 id="intro">Introduction</h2>
     <p>
-        <ul>
-            <li>1. Select color</li>
-            <li>2. Select line width</li>
-            <li>3. Select shape to draw</li>
+        <ul id="guide">
+            <li id="guide1">1. Select color</li>
+            <li id="guide2">2. Select line width</li>
+            <li id="guide3">3. Select shape to draw</li>
         </ul>
     </p>
     <canvas id="canvas" width="400" height="400"></canvas>
     <!-- selecting language -->
     <button type="button" id="en_btn">English</button>
-    <button type="button" id="spanish_btn">Spanish</button>
+    <button type="button" id="vn_btn">Vietnamese</button>
 
     <!-- selecting theme -->
     <button type="button" id="day_btn">day</button>
@@ -28,15 +29,15 @@
 
     <!-- Registration form -->
     <form id="userReg" accept-charset="utf-8" action="https://formspree.io/xzbjawgz/FORM_ID" method="post" enctype="multipart/form-data">
-        <h3> Registration form </h3><br>
+        <h3 id="reg_form"> Registration form </h3><br>
         <input type="text" name="username" placeholder="enter your username here" required>
         <input id="email" type="email" name="email" placeholder="enter your email here" required>
         <input id="pwd" type="password" name="password" placeholder="enter your password here" required>
         <input id="pwdConf" type="password" name="passwordConf" placeholder="re-enter your password here" required>
-        <input type="number" placeholder="enter your phone number here">
+        <input id="phone" type="number" placeholder="enter your phone number here">
         <input type="hidden" name="_subject" id="email-subject" value="File Upload Form">
-        <label for="upload">Your file:</label>
-        <input type="file" name="upload">
+        <label id="label_file" for="upload">Your file:</label>
+        <input id="fileUpload" type="file" name="upload">
         <button id="submitbtn" type="submit">submit</button>
     </form>
 
