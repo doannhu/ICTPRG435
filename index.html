@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="C:\Users\Doan Nhu\Downloads\kross-main\kross-main\theme\css\style.css"> -->
     <link rel="stylesheet" href="style.css">
-    <title>Abtract Art App</title>
+    <title>Abstract Art App</title>
 </head>
 <body>
     <div id="top_intro">
@@ -29,11 +28,11 @@
                 <legend><h3 id="reg_form"> SignUp </h3><br></legend>
                 <label id="urs-label" for="username">username: </label><input id="ursname" type="text" name="username" required><br>
                 <label id="email-label" for="email">email: </label><input id="email" type="email" name="email" required><br>
-                <label id="pwd-label" for="password">password: </label><input id="pwd" type="password" name="password" required><br>
+                <label id="pwd-label" for="password">password: </label><input id="pwd" type="password" name="password" minlength="8" required><br>
                 <label id="pwdConf-label" for="passwordConf">confirm password: </label><input id="pwdConf" type="password" name="passwordConf" required><br>
                 <label id="phone-label">phone: </label><input id="phone" type="number"><br>
                 <input type="hidden" name="_subject" id="email-subject" value="File Upload Form">
-                <label id="label_file" for="upload">Your file:</label>
+                <label id="label_file" for="upload">Up load your photo here (optional):</label>
                 <input id="fileUpload" type="file" name="upload"><br>
                 <button id="submitbtn" type="submit">submit</button>
             </fieldset>
@@ -43,7 +42,7 @@
         <button id="clr_btn">clear</button>
     </div> 
 
-    <canvas id="canvas" width="400" height="400"></canvas>
+    <canvas id="canvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
 
     <!-- selecting language -->
     <div class="lang_select">
