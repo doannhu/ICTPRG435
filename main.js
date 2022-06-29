@@ -38,7 +38,7 @@ function drawRectangular(){
     const recShadow = document.querySelector('#rec_shadow');
     if(recShadow) {
         ctx.beginPath();
-        ctx.shadowColor = 'red';
+        ctx.shadowColor = '#4B0082';
         ctx.shadowOffsetX = 10;
         ctx.shadowOffsetY = 10;
 
@@ -151,7 +151,7 @@ vieBtn.addEventListener("click",()=>{
     document.getElementById('sq').innerText='Hình vuông ';
     document.getElementById('sq_posx').innerText='vị trí x: ';
     document.getElementById('sq_posy').innerText='vị trí y: ';
-    document.getElementById('sq_si').innerText='chiều dài: ';
+    document.getElementById('sq_si').innerText='cạnh: ';
     document.getElementById('sq_btn').innerText='vẽ';
     //drawing circle
     document.getElementById('cir').innerText='Hình tròn ';
@@ -173,11 +173,58 @@ vieBtn.addEventListener("click",()=>{
 
 });
 
+enBtn.addEventListener("click",()=>{
+    //heading and introduction
+    document.getElementById('heading1').innerHTML='<h1>Abstract Art Competition</h1>';
+    document.getElementById('intro').innerHTML='<h1>Introduction</h1>';
+    document.getElementById('guide1').innerText='Select color';
+    document.getElementById('guide2').innerText='Select line width';
+    document.getElementById('guide3').innerText='Select shape to draw';
+    //form
+    document.getElementById('reg_form').innerText='Registration form';
+    document.getElementById('urs-label').innerText='username: ';
+    document.getElementById('email-label').innerText = 'email: ';
+    document.getElementById('pwd-label').innerText= 'password: ';
+    document.getElementById('pwdConf-label').innerText= 'confirm password: ';
+    document.getElementById('phone-label').innerText= 'phone: ';
+    document.getElementById('label_file').innerText= 'Your file:';
+    document.getElementById('submitbtn').innerText= 'submit';
+    //line width
+    document.getElementById('lineWidth-label').innerText='line width';
+    //drawing rectangular
+    document.getElementById('rec').innerText='Rectangular ';
+    document.getElementById('rec_posx').innerText='position x: ';
+    document.getElementById('rec_posy').innerText='position y: ';
+    document.getElementById('rec_wid').innerText='width: ';
+    document.getElementById('rec_hei').innerText='height: ';
+    document.getElementById('rec_sha').innerText='shadow: ';
+    document.getElementById('rec_btn').innerText='draw';
+    //drawing square
+    document.getElementById('sq').innerText='Square ';
+    document.getElementById('sq_posx').innerText='position x: ';
+    document.getElementById('sq_posy').innerText='position y: ';
+    document.getElementById('sq_si').innerText='side';
+    document.getElementById('sq_btn').innerText='draw';
+    //drawing circle
+    document.getElementById('cir').innerText='Circle ';
+    document.getElementById('cir_posx').innerText='center position x: ';
+    document.getElementById('cir_posy').innerText='center position y: ';
+    document.getElementById('cir_radius').innerText='radius ';
+    document.getElementById('cir_btn').innerText='draw';    
+    //drawing line
+    document.getElementById('line').innerText='Line';
+    document.getElementById('line_posx').innerText='line starts x: ';
+    document.getElementById('line_posy').innerText='line starts y: ';
+    document.getElementById('line_length').innerText='length: ';
+    document.getElementById('line_option').innerText='Choose a vertical/horizonal line:';  
+    document.getElementById('line_opt0').innerText='vertical 90 degree';
+    document.getElementById('line_opt1').innerText='vertical -90 degree';
+    document.getElementById('line_opt2').innerText='horizonal 0 degree';
+    document.getElementById('line_opt3').innerText='horizonal 180 degree';
+    document.getElementById('line_btn').innerText='draw';  
+
+});
 
 //Clear button
-//Check mouse position and display in canvas. For test only!
-// canvas.addEventListener("mousemove", (event) => {
-//     console.log("Mouse X: " + event.clientX)
-//     console.log("Mouse Y: " + event.clientY)
-// });
-document.querySelector('#clr_btn').addEventListener("click", ()=>{ctx.clearRect(309, 227, 400, 400)});
+
+document.querySelector('#clr_btn').addEventListener("click", ()=>{ctx.clearRect(0, 0, 400, 400)});
