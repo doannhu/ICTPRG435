@@ -1,3 +1,11 @@
+// Author name: Doan Nhu Do
+// Date created: 20/06/2022
+// Overview:
+// The abstract art allows users drawing rectangulars, circles,
+// lines and squares. The users can adjust the line width, and 
+// change color in color set
+
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -11,6 +19,7 @@ function validatePassword(){
         passConf.reportValidity();
         pass.value ='';
         passConf.value='';
+        console.log(pass.value, passConf.value);
     } else {
         passConf.setCustomValidity('');
         passConf.reportValidity();        
@@ -36,7 +45,7 @@ function drawRectangular(){
     const recWidth = document.querySelector('#rec_width');
     const recHeight = document.querySelector('#rec_height');
     const recShadow = document.querySelector('#rec_shadow');
-    if(recShadow) {
+    if(recShadow.value) { // check if shadow is ticked
         ctx.beginPath();
         ctx.shadowColor = '#4B0082';
         ctx.shadowOffsetX = 10;
