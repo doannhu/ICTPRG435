@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,3 +120,127 @@
     <script src="main.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="C:\Users\Doan Nhu\Downloads\kross-main\kross-main\theme\css\style.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <title>Abstract Art App</title>
+</head>
+<body>
+    <div id="top_intro">
+        <h1 id="heading1">Abstract Art Competition</h1>
+        <h3 id="intro">Introduction</h3>
+        <p>
+            <ol id="guide">
+                <li id="guide1">Select color</li>
+                <li id="guide2">Select line width</li>
+                <li id="guide3">Select shape to draw</li>
+                <li id="guide3">Sign up before start</li>
+            </ol>
+        </p>   
+    </div>
+
+    <div class="register">
+        <!-- Registration form -->
+        <form id="userReg" accept-charset="utf-8" action="https://formspree.io/xzbjawgz/FORM_ID" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend><h3 id="reg_form"> SignUp </h3><br></legend>
+                <label id="urs-label" for="username">username: </label><input id="ursname" type="text" name="username" required><br>
+                <label id="email-label" for="email">email: </label><input id="email" type="email" name="email" required><br>
+                <label id="pwd-label" for="password">password: </label><input id="pwd" type="password" name="password" required><br>
+                <label id="pwdConf-label" for="passwordConf">confirm password: </label><input id="pwdConf" type="password" name="passwordConf" required><br>
+                <label id="phone-label">phone: </label><input id="phone" type="number"><br>
+                <input type="hidden" name="_subject" id="email-subject" value="File Upload Form">
+                <label id="label_file" for="upload">Your file:</label>
+                <input id="fileUpload" type="file" name="upload"><br>
+                <button id="submitbtn" type="submit">submit</button>
+            </fieldset>
+        </form>
+    </div>
+    <div class="clear">
+        <button id="clr_btn">clear</button>
+    </div> 
+
+    <canvas id="canvas" width="400" height="400"></canvas>
+
+    <!-- selecting language -->
+    <div class="lang_select">
+        <button class="lang_btn" type="button" id="en_btn">English</button>
+        <button class="lang_btn" type="button" id="vn_btn">Vietnamese</button>
+    </div>
+  
+
+    <!-- selecting colour -->
+    <div class="nav">
+        <div class="clr" id="clr_p"></div>
+        <div class="clr" id="clr_d"></div>
+        <div class="clr" id="clr_w"></div>
+        <div class="clr" id="clr_se"></div>
+        <div class="clr" id="clr_su"></div>
+    </div>
+
+
+    <!-- selecting line width -->
+    <div>
+        <label id="lineWidth-label">line width </label><input type="range" id="line_width"
+        min="1" max="5">
+    </div>
+
+    <!-- drawing rectangular -->
+    <div>
+        <h4 id="rec">Rectangular</h4>
+        <label id="rec_posx">position x: </label><input type="number" id="rec_x">
+        <label id="rec_posy">position y: </label><input type="number" id="rec_y">
+        <label id="rec_wid">width: </label><input type="number" id="rec_width">
+        <label id="rec_hei">height: </label><input type="number" id="rec_height">
+        <label id="rec_sha">shadow: </label><input type="checkbox" id="rec_shadow">
+        <button type="button" id="rec_btn">draw</button>
+    </div>
+
+    <!-- drawing square -->
+    <div>
+        <h4 id="sq">Square</h4>
+        <label id="sq_posx">position x: </label><input type="number" id="sq_x">
+        <label id="sq_posy">position y: </label><input type="number" id="sq_y">
+        <label id="sq_si">side</label><input type="range" id="sq_side"
+        min="0" max="100">
+        <button type="button" id="sq_btn">draw</button>
+    </div>
+
+    <!-- drawing circle -->
+    <div>
+        <h4 id="cir">Circle</h4>
+        <label id="cir_posx">center position x: </label><input type="number" id="cir_cen_x">
+        <label id="cir_posy">center position y: </label><input type="number" id="cir_cen_y">
+        <label id="cir_radius">radius </label><input type="range" id="cir_rad"
+        min="0" max="200">
+        <button type="button" id="cir_btn">draw</button>
+    </div>
+
+    <!-- drawing line -->
+    <div>
+        <h4 id="line">Line</h4>
+        <label id="line_posx">line starts x: </label><input type="number" id="line_start_x">
+        <label id="line_posy">line starts y: </label><input type="number" id="line_start_y">
+        <label id="line_length">length: </label><input type="number" id="line_len">
+        <label id="line_option">Choose a vertical/horizonal line:</label>
+        <select name="line_opt" id="line_opt">
+          <option id="line_opt0" value="0">vertical 90 degree</option>
+          <option id="line_opt1" value="1">vertical -90 degree</option>
+          <option id="line_opt2" value="2">horizonal 0 degree</option>
+          <option id="line_opt3" value="3">horizonal 180 degree</option>
+        </select>
+        <button type="button" id="line_btn">draw</button>
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
+>>>>>>> 6653804f75520c9058e556677ea5c23c1561ecbb
