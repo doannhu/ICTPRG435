@@ -11,7 +11,7 @@ body{
 div {
     padding: 20px;
     margin-bottom: 10px;
-    align-content: center;
+    /* align-content: center; */
     background-color: whitesmoke;
     padding: .6em 1em;
   }
@@ -23,7 +23,6 @@ canvas {
     margin-top: 20px;
     margin-bottom: 20px;
     background-color: white;
-    /* border: 1px solid black; */
     border-radius: 5px; 
     
 }
@@ -51,7 +50,7 @@ select {
 
 .lang_select {
     align-items: center;
-    background-color: white;
+    background-color: whitesmoke;
 }
 .lang_btn {
     opacity: 0.5;
@@ -69,7 +68,7 @@ select {
 .nav{
     height: 30px;
     width: 20px;
-    margin-left: 25%;
+    margin-left: 7%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -110,6 +109,12 @@ select {
 }
 
 #top_heading {
+    background-color: #26023f;
+    /* position: fixed;
+    width: 100%; */
+}
+
+#top_intro {
     background-color: #26023f;
 }
 
