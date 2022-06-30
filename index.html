@@ -8,14 +8,16 @@
     <title>Abstract Art App</title>
 </head>
 <body>
-        <!-- selecting language -->
+    <div id="top_heading">
+        <h1 id="heading1">Abstract Art Competition</h1>
+    </div>
+    <!-- selecting language -->
     <div class="lang_select">
         <span><button class="lang_btn" type="button" id="en_btn">English</button></span>
         <span><button class="lang_btn" type="button" id="vn_btn">Vietnamese</button></span>
     </div>
-    <div id="top_heading">
-        <h1 id="heading1">Abstract Art Competition</h1>
-        <hr color="#fff">   
+
+    <div id="top_intro">  
         <h3 id="intro">Introduction</h3>
         <p>
             <ol id="guide">
@@ -70,19 +72,19 @@
     <!-- drawing rectangular -->
     <div>
         <h4 id="rec">Rectangular</h4>
-        <label id="rec_posx">position x: </label><input type="number" id="rec_x">
-        <label id="rec_posy">position y: </label><input type="number" id="rec_y">
-        <label id="rec_wid">width: </label><input type="number" id="rec_width">
-        <label id="rec_hei">height: </label><input type="number" id="rec_height">
-        <label id="rec_sha">shadow: </label><input type="checkbox" id="rec_shadow" value="1">
+        <label id="rec_posx">position x: </label><input class="input_number" type="number" id="rec_x" size="4">
+        <label id="rec_posy">position y: </label><input class="input_number" type="number" id="rec_y" size="4">
+        <label id="rec_wid">width: </label><input class="input_number" type="number" id="rec_width" size="4">
+        <label id="rec_hei">height: </label><input class="input_number" type="number" id="rec_height" size="4">
+        <label id="rec_sha">shadow: </label><input class="input_number" type="checkbox" id="rec_shadow" value="1">
         <button type="button" id="rec_btn">draw</button>
     </div>
 
     <!-- drawing square -->
     <div>
         <h4 id="sq">Square</h4>
-        <label id="sq_posx">position x: </label><input type="number" id="sq_x">
-        <label id="sq_posy">position y: </label><input type="number" id="sq_y">
+        <label id="sq_posx">position x: </label><input class="input_number" type="number" id="sq_x" size="4">
+        <label id="sq_posy">position y: </label><input class="input_number" type="number" id="sq_y" size="4">
         <label id="sq_si">side</label><input type="range" id="sq_side"
         min="0" max="100">
         <button type="button" id="sq_btn">draw</button>
@@ -91,8 +93,8 @@
     <!-- drawing circle -->
     <div>
         <h4 id="cir">Circle</h4>
-        <label id="cir_posx">center position x: </label><input type="number" id="cir_cen_x">
-        <label id="cir_posy">center position y: </label><input type="number" id="cir_cen_y">
+        <label id="cir_posx">center position x: </label><input class="input_number" type="number" id="cir_cen_x" size="4">
+        <label id="cir_posy">center position y: </label><input class="input_number" type="number" id="cir_cen_y" size="4">
         <label id="cir_radius">radius </label><input type="range" id="cir_rad"
         min="0" max="200">
         <button type="button" id="cir_btn">draw</button>
@@ -101,9 +103,9 @@
     <!-- drawing line -->
     <div>
         <h4 id="line">Line</h4>
-        <label id="line_posx">line starts x: </label><input type="number" id="line_start_x">
-        <label id="line_posy">line starts y: </label><input type="number" id="line_start_y">
-        <label id="line_length">length: </label><input type="number" id="line_len">
+        <label id="line_posx">line starts x: </label><input class="input_number" type="number" id="line_start_x" size="4">
+        <label id="line_posy">line starts y: </label><input class="input_number" type="number" id="line_start_y" size="4">
+        <label id="line_length">length: </label><input class="input_number" type="number" id="line_len" size="4">
         <label id="line_option">Choose a vertical/horizonal line:</label>
         <select name="line_opt" id="line_opt">
           <option id="line_opt0" value="0">vertical 90 degree</option>
