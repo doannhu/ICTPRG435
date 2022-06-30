@@ -8,15 +8,22 @@
     <title>Abstract Art App</title>
 </head>
 <body>
-    <div id="top_intro">
+        <!-- selecting language -->
+    <div class="lang_select">
+        <span><button class="lang_btn" type="button" id="en_btn">English</button></span>
+        <span><button class="lang_btn" type="button" id="vn_btn">Vietnamese</button></span>
+    </div>
+    <div id="top_heading">
         <h1 id="heading1">Abstract Art Competition</h1>
+        <hr color="#fff">   
         <h3 id="intro">Introduction</h3>
         <p>
             <ol id="guide">
-                <li id="guide1">Select color</li>
-                <li id="guide2">Select line width</li>
-                <li id="guide3">Select shape to draw</li>
-                <li id="guide3">Sign up before start</li>
+                <li id="guide1">Sign up before start</li>
+                <li id="guide2">Select color</li>
+                <li id="guide3">Select line width</li>
+                <li id="guide4">Select shape to draw</li>
+                <li id="guide5">Press clear to start over the Canvas</li>
             </ol>
         </p>   
     </div>
@@ -26,30 +33,23 @@
         <form id="userReg" accept-charset="utf-8" action="https://formspree.io/xzbjawgz/FORM_ID" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend><h3 id="reg_form"> SignUp </h3><br></legend>
-                <label id="urs-label" for="username">username: </label><input id="ursname" type="text" name="username" required><br>
-                <label id="email-label" for="email">email: </label><input id="email" type="email" name="email" required><br>
-                <label id="pwd-label" for="password">password: </label><input id="pwd" type="password" name="password" minlength="8" required><br>
-                <label id="pwdConf-label" for="passwordConf">confirm password: </label><input id="pwdConf" type="password" name="passwordConf" required><br>
-                <label id="phone-label">phone: </label><input id="phone" type="number"><br>
+                <label id="urs-label" for="username">Username: </label><br><input id="ursname" type="text" name="username" required><br>
+                <label id="email-label" for="email">Email: </label><br><input id="email" type="email" name="email" required><br>
+                <label id="pwd-label" for="password">Password: </label><br><input id="pwd" type="password" name="password" minlength="8" required><br>
+                <label id="pwdConf-label" for="passwordConf">Confirm password: </label><br><input id="pwdConf" type="password" name="passwordConf" required><br>
+                <label id="phone-label">Phone: </label><br><input id="phone" type="number"><br>
                 <input type="hidden" name="_subject" id="email-subject" value="File Upload Form">
-                <label id="label_file" for="upload">Up load your photo here (optional):</label>
+                <label id="label_file" for="upload">Upload your photo here (optional):</label>
                 <input id="fileUpload" type="file" name="upload"><br>
-                <button id="submitbtn" type="submit">submit</button>
+                <button id="submitbtn" type="submit">Submit</button>
             </fieldset>
         </form>
     </div>
     <div class="clear">
-        <button id="clr_btn">clear</button>
+        <button id="clr_btn">Clear Canvas</button>
     </div> 
 
     <canvas id="canvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
-
-    <!-- selecting language -->
-    <div class="lang_select">
-        <button class="lang_btn" type="button" id="en_btn">English</button>
-        <button class="lang_btn" type="button" id="vn_btn">Vietnamese</button>
-    </div>
-  
 
     <!-- selecting colour -->
     <div class="nav">
@@ -63,7 +63,7 @@
 
     <!-- selecting line width -->
     <div>
-        <label id="lineWidth-label">line width </label><input type="range" id="line_width"
+        <label id="lineWidth-label">Line width </label><input type="range" id="line_width"
         min="1" max="5">
     </div>
 
@@ -74,7 +74,7 @@
         <label id="rec_posy">position y: </label><input type="number" id="rec_y">
         <label id="rec_wid">width: </label><input type="number" id="rec_width">
         <label id="rec_hei">height: </label><input type="number" id="rec_height">
-        <label id="rec_sha">shadow: </label><input type="checkbox" id="rec_shadow">
+        <label id="rec_sha">shadow: </label><input type="checkbox" id="rec_shadow" value="1">
         <button type="button" id="rec_btn">draw</button>
     </div>
 
