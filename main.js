@@ -45,9 +45,15 @@ function drawRectangular(){
     const recWidth = document.querySelector('#rec_width');
     const recHeight = document.querySelector('#rec_height');
     const recShadow = document.querySelector('#rec_shadow');
-    if(recShadow.value) { // check if shadow is ticked
+    if (recX.value<=0 || recY.value<=0 || recWidth.value<=0 || recHeight.value<=0 ||recX.value>400 || recY.value>400 || recWidth.value>400 || recHeight.value>400){
+        alert('Please enter value between 0 and 400');
+        recX.value='';
+        recY.value='';
+        recWidth.value='';
+        recHeight.value='';
+    } else if(recShadow.checked) { // check if shadow is ticked
         ctx.beginPath();
-        ctx.shadowColor = '#4B0082';
+        ctx.shadowColor = '#26023f';
         ctx.shadowOffsetX = 10;
         ctx.shadowOffsetY = 10;
 
@@ -71,11 +77,17 @@ function drawSquare(){
     const sqX = document.querySelector('#sq_x');
     const sqY = document.querySelector('#sq_y');
     const sqSide = document.querySelector('#sq_side');
-    ctx.beginPath();
-    ctx.fillStyle = clr;
-    ctx.fillRect(sqX.value, sqY.value, sqSide.value, sqSide.value);
-    ctx.strokeStyle = clr;
-    ctx.strokeRect(sqX.value, sqY.value, sqSide.value, sqSide.value); 
+    if (sqX.value <= 0 || sqX.value >400 || sqY.value <= 0 || sqY.value >400) {
+        alert("please enter value between 0 and 400");
+        sqX.value = '';
+        sqY.value = '';
+    } else {
+        ctx.beginPath();
+        ctx.fillStyle = clr;
+        ctx.fillRect(sqX.value, sqY.value, sqSide.value, sqSide.value);
+        ctx.strokeStyle = clr;
+        ctx.strokeRect(sqX.value, sqY.value, sqSide.value, sqSide.value); 
+    }
 }
 
 
@@ -85,11 +97,17 @@ function drawCircle(){
     const cirX = document.querySelector('#cir_cen_x');
     const cirY = document.querySelector('#cir_cen_y');
     const cirRad = document.querySelector('#cir_rad');
-    ctx.beginPath();
-    ctx.arc(cirX.value, cirY.value, cirRad.value, 0, 2*Math.PI);
-    ctx.stroke();
-    ctx.fillStyle = clr;
-    ctx.fill();
+    if (cirX.vale <=0 || cirY.value <=0 || cirX.vale >400 || cirY.value >400) {
+        alert ('Please enter value between 0 and 400');
+        cirX.vale='';
+        cirY.value='';
+    } else {
+        ctx.beginPath();
+        ctx.arc(cirX.value, cirY.value, cirRad.value, 0, 2*Math.PI);
+        ctx.stroke();
+        ctx.fillStyle = clr;
+        ctx.fill();
+    }
 }
 
 
@@ -100,28 +118,37 @@ function drawLine(){
     const lineY = document.querySelector('#line_start_y');
     const lineLen = document.querySelector('#line_len');
     const lineOpt = document.querySelector('#line_opt');
-    ctx.beginPath();
-    switch (lineOpt.value) {
-        case "0":
-            ctx.moveTo(lineX.value, lineY.value);
-            ctx.lineTo(lineX.value, lineY.value +  lineLen.value);
-            ctx.stroke();
-            break;
-        case "1":
-            ctx.moveTo(lineX.value, lineY.value);
-            ctx.lineTo(lineX.value, lineY.value -  lineLen.value);
-            ctx.stroke();
-            break;
-        case "2":
-            ctx.moveTo(lineX.value, lineY.value);
-            ctx.lineTo(lineX.value  + lineLen.value, lineY.value);
-            ctx.stroke();
-            break;
-        case "3":
-            ctx.moveTo(lineX.value, lineY.value);
-            ctx.lineTo(lineX.value -  lineLen.value, lineY.value);
-            x.stroke();
-            break;}}
+    if (lineX.value <=0 || lineY.value <=0 || lineLen.value <=0 || lineX.value >400 || lineY.value >400 || lineLen.value >400){
+        alert('Please enter value between 0 and 400');
+        lineX.value='';
+        lineY.value='';
+        lineLen.value='';
+    } else {
+        ctx.beginPath();
+        switch (lineOpt.value) {
+            case "0":
+                ctx.moveTo(lineX.value, lineY.value);
+                ctx.lineTo(lineX.value, lineY.value +  lineLen.value);
+                ctx.stroke();
+                break;
+            case "1":
+                ctx.moveTo(lineX.value, lineY.value);
+                ctx.lineTo(lineX.value, lineY.value -  lineLen.value);
+                ctx.stroke();
+                break;
+            case "2":
+                ctx.moveTo(lineX.value, lineY.value);
+                ctx.lineTo(lineX.value  + lineLen.value, lineY.value);
+                ctx.stroke();
+                break;
+            case "3":
+                ctx.moveTo(lineX.value, lineY.value);
+                ctx.lineTo(lineX.value -  lineLen.value, lineY.value);
+                x.stroke();
+                break;
+        };
+    }
+}
 
     
 
@@ -132,20 +159,24 @@ const enBtn = document.querySelector('#en_btn');
 
 vieBtn.addEventListener("click",()=>{
     //heading and introduction
-    document.getElementById('heading1').innerHTML='<h1>Cuộc thi sáng tạo nghệ thuật</h1>';
-    document.getElementById('intro').innerHTML='<h1>Giới thiệu</h1>';
-    document.getElementById('guide1').innerText='Lựa chọn màu sắc';
-    document.getElementById('guide2').innerText='Lựa chọn độ đậm nét';
-    document.getElementById('guide3').innerText='Lựa chọn hình dạng';
+    document.getElementById('heading1').innerText='Cuộc thi sáng tạo nghệ thuật';
+    document.getElementById('intro').innerText='Giới thiệu';
+    document.getElementById('guide1').innetText='Đăng kí trước khi bắt đầu';
+    document.getElementById('guide2').innerText='Lựa chọn màu sắc';
+    document.getElementById('guide3').innerText='Lựa chọn độ đậm nét';
+    document.getElementById('guide4').innerText='Lựa chọn hình dạng';
+    document.getElementById('guide5').innerText='Ấn xóa để bắt đầu lại hình vẽ';
+    //clear button
+    document.getElementById('clr_btn').innerText='Xóa';    
     //form
     document.getElementById('reg_form').innerText='Form Đăng kí';
-    document.getElementById('urs-label').innerText='tên đăng nhập: ';
-    document.getElementById('email-label').innerText = 'thư điện tử: ';
-    document.getElementById('pwd-label').innerText= 'mật khẩu: ';
-    document.getElementById('pwdConf-label').innerText= 'xác nhận mật khẩu: ';
-    document.getElementById('phone-label').innerText= 'số điện thoại: ';
+    document.getElementById('urs-label').innerText='Tên đăng nhập: ';
+    document.getElementById('email-label').innerText = 'Thư điện tử: ';
+    document.getElementById('pwd-label').innerText= 'Mật khẩu: ';
+    document.getElementById('pwdConf-label').innerText= 'Xác nhận mật khẩu: ';
+    document.getElementById('phone-label').innerText= 'Số điện thoại: ';
     document.getElementById('label_file').innerText= 'File của bạn: ';
-    document.getElementById('submitbtn').innerText= 'nộp';
+    document.getElementById('submitbtn').innerText= 'Nộp';
     //line width
     document.getElementById('lineWidth-label').innerText='Độ dày nét';
     //drawing rectangular
@@ -184,22 +215,26 @@ vieBtn.addEventListener("click",()=>{
 
 enBtn.addEventListener("click",()=>{
     //heading and introduction
-    document.getElementById('heading1').innerHTML='<h1>Abstract Art Competition</h1>';
-    document.getElementById('intro').innerHTML='<h1>Introduction</h1>';
-    document.getElementById('guide1').innerText='Select color';
-    document.getElementById('guide2').innerText='Select line width';
-    document.getElementById('guide3').innerText='Select shape to draw';
+    document.getElementById('heading1').innerText='Abstract Art Competition';
+    document.getElementById('intro').innerHTML='Introduction';
+    document.getElementById('guide1').innerText='Sign up before start';    
+    document.getElementById('guide2').innerText='Select color';
+    document.getElementById('guide3').innerText='Select line width';
+    document.getElementById('guide4').innerText='Select shape to draw';
+    document.getElementById('guide5').innerText='Press clear to start over the Canvas';
+    //clear button
+    document.getElementById('clr_btn').innerText='Clear Canvas';       
     //form
     document.getElementById('reg_form').innerText='Registration form';
-    document.getElementById('urs-label').innerText='username: ';
-    document.getElementById('email-label').innerText = 'email: ';
-    document.getElementById('pwd-label').innerText= 'password: ';
-    document.getElementById('pwdConf-label').innerText= 'confirm password: ';
-    document.getElementById('phone-label').innerText= 'phone: ';
+    document.getElementById('urs-label').innerText='Username: ';
+    document.getElementById('email-label').innerText = 'Email: ';
+    document.getElementById('pwd-label').innerText= 'Password: ';
+    document.getElementById('pwdConf-label').innerText= 'Confirm password: ';
+    document.getElementById('phone-label').innerText= 'Phone: ';
     document.getElementById('label_file').innerText= 'Your file:';
-    document.getElementById('submitbtn').innerText= 'submit';
+    document.getElementById('submitbtn').innerText= 'Submit';
     //line width
-    document.getElementById('lineWidth-label').innerText='line width';
+    document.getElementById('lineWidth-label').innerText='Line width';
     //drawing rectangular
     document.getElementById('rec').innerText='Rectangular ';
     document.getElementById('rec_posx').innerText='position x: ';
@@ -234,6 +269,16 @@ enBtn.addEventListener("click",()=>{
 
 });
 
-//Clear button
-
-document.querySelector('#clr_btn').addEventListener("click", ()=>{ctx.clearRect(0, 0, 400, 400)});
+//Clear canvas
+// below function is only for iteration demonstration. This function is slow.
+// Instead, use this: document.querySelector('#clr_btn').addEventListener("click", ()=>{ctx.clearRect(0, 0, 400, 400)}); 
+document.querySelector('#clr_btn').addEventListener("click", clearCanvas);
+function clearCanvas(){
+    for (let i=0; i<400; i++)
+    {
+        for (let j=0; j<400; j++)
+        {
+            ctx.clearRect(0, 0, i, j);
+        }
+    }
+}
