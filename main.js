@@ -61,12 +61,18 @@ function drawRectangular(){
         ctx.fillRect(recX.value, recY.value, recWidth.value, recHeight.value);
         ctx.strokeStyle = clr;
         ctx.strokeRect(recX.value, recY.value, recWidth.value, recHeight.value);
+        recShadow.checked = false;
+        ctx.shadowColor = '#fff'; //clear the shadow for the next draw
     } else {
         ctx.beginPath();
         ctx.fillStyle = clr;
         ctx.fillRect(recX.value, recY.value, recWidth.value, recHeight.value);
         ctx.strokeStyle = clr;
         ctx.strokeRect(recX.value, recY.value, recWidth.value, recHeight.value);
+        recX.value=''; //clear input
+        recY.value='';
+        recWidth.value='';
+        recHeight.value='';
      }
 }
 
@@ -81,12 +87,14 @@ function drawSquare(){
         alert("please enter value between 0 and 400");
         sqX.value = '';
         sqY.value = '';
-    } else {
+    } else {                                                                                                                    
         ctx.beginPath();
         ctx.fillStyle = clr;
         ctx.fillRect(sqX.value, sqY.value, sqSide.value, sqSide.value);
         ctx.strokeStyle = clr;
-        ctx.strokeRect(sqX.value, sqY.value, sqSide.value, sqSide.value); 
+        ctx.strokeRect(sqX.value, sqY.value, sqSide.value, sqSide.value);
+        sqX.value = ''; //clear input
+        sqY.value = ''; 
     }
 }
 
@@ -107,6 +115,8 @@ function drawCircle(){
         ctx.stroke();
         ctx.fillStyle = clr;
         ctx.fill();
+        cirX.vale=''; //clear input
+        cirY.value='';
     }
 }
 
@@ -147,6 +157,9 @@ function drawLine(){
                 x.stroke();
                 break;
         };
+        lineX.value=''; //clear input
+        lineY.value='';
+        lineLen.value='';
     }
 }
 
