@@ -47,10 +47,6 @@ function drawRectangular(){
     const recShadow = document.querySelector('#rec_shadow');
     if (recX.value<=0 || recY.value<=0 || recWidth.value<=0 || recHeight.value<=0 ||recX.value>400 || recY.value>400 || recWidth.value>400 || recHeight.value>400){
         alert('Please enter value between 0 and 400');
-        recX.value='';
-        recY.value='';
-        recWidth.value='';
-        recHeight.value='';
     } else if(recShadow.checked) { // check if shadow is ticked
         ctx.beginPath();
         ctx.shadowColor = '#26023f';
@@ -69,11 +65,12 @@ function drawRectangular(){
         ctx.fillRect(recX.value, recY.value, recWidth.value, recHeight.value);
         ctx.strokeStyle = clr;
         ctx.strokeRect(recX.value, recY.value, recWidth.value, recHeight.value);
-        recX.value=''; //clear input
-        recY.value='';
-        recWidth.value='';
-        recHeight.value='';
+
      }
+    recX.value=''; //clear input
+    recY.value='';
+    recWidth.value='';
+    recHeight.value='';
 }
 
 
@@ -85,17 +82,15 @@ function drawSquare(){
     const sqSide = document.querySelector('#sq_side');
     if (sqX.value <= 0 || sqX.value >400 || sqY.value <= 0 || sqY.value >400) {
         alert("please enter value between 0 and 400");
-        sqX.value = '';
-        sqY.value = '';
-    } else {                                                                                                                    
+    } else {                                      
         ctx.beginPath();
         ctx.fillStyle = clr;
         ctx.fillRect(sqX.value, sqY.value, sqSide.value, sqSide.value);
         ctx.strokeStyle = clr;
         ctx.strokeRect(sqX.value, sqY.value, sqSide.value, sqSide.value);
-        sqX.value = ''; //clear input
-        sqY.value = ''; 
     }
+    sqX.value = ''; //clear input
+    sqY.value = ''; 
 }
 
 
@@ -107,17 +102,15 @@ function drawCircle(){
     const cirRad = document.querySelector('#cir_rad');
     if (cirX.vale <=0 || cirY.value <=0 || cirX.vale >400 || cirY.value >400) {
         alert ('Please enter value between 0 and 400');
-        cirX.vale='';
-        cirY.value='';
     } else {
         ctx.beginPath();
         ctx.arc(cirX.value, cirY.value, cirRad.value, 0, 2*Math.PI);
         ctx.stroke();
         ctx.fillStyle = clr;
         ctx.fill();
-        cirX.vale=''; //clear input
-        cirY.value='';
     }
+    cirX.vale=''; //clear input
+    cirY.value='';
 }
 
 
@@ -130,9 +123,6 @@ function drawLine(){
     const lineOpt = document.querySelector('#line_opt');
     if (lineX.value <=0 || lineY.value <=0 || lineLen.value <=0 || lineX.value >400 || lineY.value >400 || lineLen.value >400){
         alert('Please enter value between 0 and 400');
-        lineX.value='';
-        lineY.value='';
-        lineLen.value='';
     } else {
         ctx.beginPath();
         switch (lineOpt.value) {
@@ -157,10 +147,10 @@ function drawLine(){
                 x.stroke();
                 break;
         };
-        lineX.value=''; //clear input
-        lineY.value='';
-        lineLen.value='';
     }
+    lineX.value=''; //clear input
+    lineY.value='';
+    lineLen.value='';
 }
 
     
