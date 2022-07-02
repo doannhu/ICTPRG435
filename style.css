@@ -131,3 +131,9 @@ select {
 .register {
     background-color: whitesmoke;
 }
+
+a:link { text-decoration: none; }
+
+a:hover{
+    transform: scale(1.2);
+}

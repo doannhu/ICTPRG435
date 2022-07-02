@@ -21,11 +21,11 @@
         <h3 id="intro">Introduction</h3>
         <p>
             <ol id="guide">
-                <li id="guide1">Sign up before start</li>
-                <li id="guide2">Select color</li>
-                <li id="guide3">Select line width</li>
-                <li id="guide4">Select shape to draw</li>
-                <li id="guide5">Press clear to start over the Canvas</li>
+                <a href="#userReg" style="color: #fff;"><li id="guide1">Sign up before start</li></a>
+                <a href="#nav" style="color: #fff;"><li id="guide2">Select color</li></a>
+                <a href="#lineWidth-label" style="color: #fff;"><li id="guide3">Select line width</li></a>
+                <a href="#rec" style="color: #fff;"><li id="guide4">Select shape to draw</li></a>
+                <a href="#clr_btn" style="color: #fff;"><li id="guide5">Press clear to start over the Canvas</li></a>
             </ol>
         </p>   
     </div>
@@ -34,7 +34,7 @@
         <!-- Registration form -->
         <form id="userReg" accept-charset="utf-8" action="https://formspree.io/xzbjawgz/FORM_ID" method="post" enctype="multipart/form-data">
             <fieldset>
-                <legend><h3 id="reg_form"> SignUp </h3><br></legend>
+                <legend><h3 id="reg_form"> Sign Up </h3><br></legend>
                 <label id="urs-label" for="username">Username: </label><br><input id="ursname" type="text" name="username" required><br>
                 <label id="email-label" for="email">Email: </label><br><input id="email" type="email" name="email" required><br>
                 <label id="pwd-label" for="password">Password: </label><br><input id="pwd" type="password" name="password" minlength="8" required><br>
@@ -54,7 +54,7 @@
     <canvas id="canvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
 
     <!-- selecting colour -->
-    <div class="nav">
+    <div id="nav" class="nav">
         <div class="clr" id="clr_p"></div>
         <div class="clr" id="clr_d"></div>
         <div class="clr" id="clr_w"></div>

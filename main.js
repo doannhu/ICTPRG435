@@ -228,7 +228,7 @@ enBtn.addEventListener("click",()=>{
     //clear button
     document.getElementById('clr_btn').innerText='Clear Canvas';       
     //form
-    document.getElementById('reg_form').innerText='Registration form';
+    document.getElementById('reg_form').innerText='Sign Up';
     document.getElementById('urs-label').innerText='Username: ';
     document.getElementById('email-label').innerText = 'Email: ';
     document.getElementById('pwd-label').innerText= 'Password: ';
