@@ -67,10 +67,10 @@ function drawRectangular(){
         ctx.strokeRect(recX.value, recY.value, recWidth.value, recHeight.value);
 
      }
-    recX.value=''; //clear input
-    recY.value='';
-    recWidth.value='';
-    recHeight.value='';
+    // recX.value=''; //clear input
+    // recY.value='';
+    // recWidth.value='';
+    // recHeight.value='';
 }
 
 
@@ -109,7 +109,7 @@ function drawCircle(){
         ctx.fillStyle = clr;
         ctx.fill();
     }
-    cirX.vale=''; //clear input
+    cirX.value=''; //clear input
     cirY.value='';
 }
 
@@ -273,15 +273,4 @@ enBtn.addEventListener("click",()=>{
 });
 
 //Clear canvas
-// below function is only for iteration demonstration. This function is slow.
-// Instead, use this: document.querySelector('#clr_btn').addEventListener("click", ()=>{ctx.clearRect(0, 0, 400, 400)}); 
-document.querySelector('#clr_btn').addEventListener("click", clearCanvas);
-function clearCanvas(){
-    for (let i=0; i<400; i++)
-    {
-        for (let j=0; j<400; j++)
-        {
-            ctx.clearRect(0, 0, i, j);
-        }
-    }
-}
+document.querySelector('#clr_btn').addEventListener("click", ()=>{ctx.clearRect(0, 0, 500, 500)}); 
