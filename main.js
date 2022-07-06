@@ -67,10 +67,10 @@ function drawRectangular(){
         ctx.strokeRect(recX.value, recY.value, recWidth.value, recHeight.value);
 
      }
-    // recX.value=''; //clear input
-    // recY.value='';
-    // recWidth.value='';
-    // recHeight.value='';
+    recX.value=''; //clear input
+    recY.value='';
+    recWidth.value='';
+    recHeight.value='';
 }
 
 
@@ -273,4 +273,4 @@ enBtn.addEventListener("click",()=>{
 });
 
 //Clear canvas
-document.querySelector('#clr_btn').addEventListener("click", ()=>{ctx.clearRect(0, 0, 500, 500)}); 
+document.querySelector('#clr_btn').addEventListener("click", ()=>{ctx.clearRect(0, 0, 400, 400)}); 
